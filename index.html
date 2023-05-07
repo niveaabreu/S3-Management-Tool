@@ -219,47 +219,9 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          About
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="." class="md-nav__link md-nav__link--active">
         About
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -285,28 +247,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -327,6 +267,17 @@
 <p>Esta é uma ferramenta de gerenciamento de buckets S3 ,instancias de armazenamento, com templates terraform tipo como se fosse um "google drive". </p>
 <p>Com esta ferramenta, será  possível criar-se novos buckets no S3, gerenciar suas permissões de acesso, criação de folders, criação de políticas. Será possível também a listagem de buckets na conta do usuários, objetos em um bucket especificado, configurações de lifecycle. </p>
 <p>Por fim, pretende-se a criação de uma simples interface web que possibilite o upload de objetos no bucket, assim como listagem,  download e exclusão destes caso seja do desejo do usuário. Notificação para saber qual bucket foi modificado.</p>
+<h1 id="aws">AWS</h1>
+<p>É uma plataforma de serviços de computação em nuvem oferecida pela Amazon, que permite que indivíduos e organizações implementem aplicativos, serviços e infraestrutura na nuvem. A AWS oferece uma ampla variedade de serviços em nuvem, incluindo computação, armazentamento, banco de dados, análise, inteligência artificial, machine learning e muito mais.</p>
+<h1 id="s3">S3</h1>
+<p>É um serviço de armanezamento de objetos oferecido pela Amazon Web Services (AWS). O S3 permite que os usuários armazenem e recuperem arquivos de qualquer lugar da web.
+O S3 é amplamente utilizado por empresas e organizações de diferentes setores para armazenamento e compartilhamento de arquivos, backup e arquivamento de dados, hospedagem de sites e aplicativos, e muito mais.</p>
+<h1 id="terraform">Terraform</h1>
+<p>É uma infraestrutura que descreve os recursos que você deseja provisionar, como servidores, banco de dados e outros. Além disso, você pode usar o Terraform para criar, alterar e destruir recursos automaticamente.</p>
+<h2 id="iniciando-configuracoes-do-terraform">Iniciando configuracões do Terraform</h2>
+<p>Para criar um bucket no S3 foram utilizados os seguintes comandos:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>terraform<span class="w"> </span>init
+</span></code></pre></div>
 <h2 id="commands">Commands</h2>
 <ul>
 <li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
