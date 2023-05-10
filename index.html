@@ -219,9 +219,88 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          About
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         About
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisitos" class="md-nav__link">
+    Pré requisitos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-essenciais-da-ferramenta" class="md-nav__link">
+    Recursos essenciais da ferramenta
+  </a>
+  
+    <nav class="md-nav" aria-label="Recursos essenciais da ferramenta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    AWS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s3" class="md-nav__link">
+    S3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucket" class="md-nav__link">
+    Bucket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform" class="md-nav__link">
+    Terraform
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iniciando-nossa-infraestrutura" class="md-nav__link">
+    Iniciando nossa infraestrutura
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -247,6 +326,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisitos" class="md-nav__link">
+    Pré requisitos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursos-essenciais-da-ferramenta" class="md-nav__link">
+    Recursos essenciais da ferramenta
+  </a>
+  
+    <nav class="md-nav" aria-label="Recursos essenciais da ferramenta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    AWS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s3" class="md-nav__link">
+    S3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bucket" class="md-nav__link">
+    Bucket
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform" class="md-nav__link">
+    Terraform
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iniciando-nossa-infraestrutura" class="md-nav__link">
+    Iniciando nossa infraestrutura
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -264,33 +406,70 @@
 
 
 <h1 id="ferramenta-de-gerenciamento-do-amazon-s3">Ferramenta de Gerenciamento do Amazon S3</h1>
-<p>Esta é uma ferramenta de gerenciamento de buckets S3 ,instancias de armazenamento, com templates terraform tipo como se fosse um "google drive". </p>
+<p>Esta é uma ferramenta/produto de gerenciamento de buckets S3, instancias de armazenamento, com templates terraform tipo como se fosse um "google drive". </p>
 <p>Com esta ferramenta, será  possível criar-se novos buckets no S3, gerenciar suas permissões de acesso, criação de folders, criação de políticas. Será possível também a listagem de buckets na conta do usuários, objetos em um bucket especificado, configurações de lifecycle. </p>
 <p>Por fim, pretende-se a criação de uma simples interface web que possibilite o upload de objetos no bucket, assim como listagem,  download e exclusão destes caso seja do desejo do usuário. Notificação para saber qual bucket foi modificado.</p>
-<h1 id="aws">AWS</h1>
+<div align="center">
+<img  style="width:500px" src="../assets/management.png"/>
+</div>
+<h2 id="pre-requisitos">Pré requisitos</h2>
+<p>Para execução adequada deste roteiro, são necessários os seguintes pré-requisitos:</p>
+<ul>
+<li>Ubuntu &gt; 20.0 ou WSL2</li>
+<li>Terraform</li>
+<li>Python &gt; 3.6</li>
+<li>Conta na AWS com usuário com permissões de administrador</li>
+</ul>
+<h2 id="recursos-essenciais-da-ferramenta">Recursos essenciais da ferramenta</h2>
+<h3 id="aws">AWS</h3>
 <p>É uma plataforma de serviços de computação em nuvem oferecida pela Amazon, que permite que indivíduos e organizações implementem aplicativos, serviços e infraestrutura na nuvem. A AWS oferece uma ampla variedade de serviços em nuvem, incluindo computação, armazentamento, banco de dados, análise, inteligência artificial, machine learning e muito mais.</p>
-<h1 id="s3">S3</h1>
+<p>Para conseguir interagir com os serviços e funções que a AWS provém, por meio de IaC (Infrastructure as Code), é necessário obter <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html">chaves de acesso</a>, que permitam o gerenciamento e provisionamento dos recursos que desejamos alocar na nuvem.</p>
+<p>De posse de suas respectivas chaves de acesso, crie duas variáveis de ambiente, conforme padrão abaixo:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AWS_ACCESS_KEY_ID</span><span class="o">=</span>&lt;ID_CHAVE_DE_ACESSO&gt;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span>&lt;CHAVE_SECRETA_DE_ACESSO&gt;
+</span></code></pre></div>
+Realiza-se o acesso a essas chaves para segurança de dados de quem acessa, pois assim evita-se sempre ter que colocar a senha no ambiente e a senha estar exposta</p>
+<h3 id="s3">S3</h3>
 <p>É um serviço de armanezamento de objetos oferecido pela Amazon Web Services (AWS). O S3 permite que os usuários armazenem e recuperem arquivos de qualquer lugar da web.
 O S3 é amplamente utilizado por empresas e organizações de diferentes setores para armazenamento e compartilhamento de arquivos, backup e arquivamento de dados, hospedagem de sites e aplicativos, e muito mais.</p>
-<h1 id="terraform">Terraform</h1>
+<h3 id="bucket">Bucket</h3>
+<p>Bucket é um conceito de armazenamento usado em serviços de armazenamento em nuvem, como o Amazon S3. Um bucket pode ser considerado como um contêiner de objetos, que pode armazenar e gerenciar vários objetos, como arquivos, imagens, vídeos, entre outros. Os buckets são amplamente utilizados para hospedar sites estáticos, armazenamento de backup, arquivamento de dados e muito mais. Eles são uma parte essencial de muitos serviços em nuvem e permitem que os usuários armazenem, gerenciem e acessem dados de qualquer lugar da web.</p>
+<h3 id="terraform">Terraform</h3>
 <p>É uma infraestrutura que descreve os recursos que você deseja provisionar, como servidores, banco de dados e outros. Além disso, você pode usar o Terraform para criar, alterar e destruir recursos automaticamente.</p>
-<h2 id="iniciando-configuracoes-do-terraform">Iniciando configuracões do Terraform</h2>
-<p>Para criar um bucket no S3 foram utilizados os seguintes comandos:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>terraform<span class="w"> </span>init
+<h2 id="iniciando-nossa-infraestrutura">Iniciando nossa infraestrutura</h2>
+<p>Crie uma pasta para organizar nossos arquivos chamada <strong>terraform/</strong>::</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mkdir<span class="w"> </span>terraform<span class="w"> </span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>terraform
 </span></code></pre></div>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<div class="language-text highlight"><pre><span></span><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
+<p>Como nosso primeiro objetivo é criar um bucket na AWS crie um template chamado <strong>s3.tf</strong> com o seguinte conteúdo:</p>
+<div class="language-terraform highlight"><span class="filename">s3.tf</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">#Provider and default region used</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kr">provider</span><span class="w"> </span><span class="nv">&quot;aws&quot;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="na">region</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;us-east-2&quot;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;aws_s3_bucket&quot;</span><span class="w"> </span><span class="nv">&quot;exemplo&quot;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="na">bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;Nome do bucket&gt;&quot;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nb">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="na">Name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;My bucket&quot;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="na">Environment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Dev&quot;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/26a0.svg" title=":warning:" /> <strong>Subistitua o nome do bucket pelo que você deseja, lembrando que esse nome é único em toda AWS</strong></p>
+<p>Inicie então os recursos terraform necessários para provisionar rodando o comando abaixo:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>terraform<span class="w"> </span>init
+</span></code></pre></div>
+<p>Agora veremos o plano de criação desses recursos:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>terraform<span class="w"> </span>plan
+</span></code></pre></div>
+<p>Por fim, realize deploy deste recurso na nuvem:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>terraform<span class="w"> </span>apply<span class="w"> </span>-auto-approve
+</span></code></pre></div>
+<p>Caso tudo dê certo você verá isso no console da AWS</p>
+<div align="center">
+<img  style="width:500px" src="../assets/bucket-nivea.png"/>
+</div>
 
 
 
