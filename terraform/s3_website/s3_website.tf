@@ -1,10 +1,5 @@
-# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#example-usage
-provider "aws" {
-  region = "us-east-1" # Substitua pela região desejada
-}
-
 resource "aws_s3_bucket" "website" {
-  bucket = "bucketdanivinhaprojeto21"
+  bucket = "projetocloudnivea21"
 }
 
 resource "aws_s3_bucket_ownership_controls" "example" {
@@ -49,6 +44,10 @@ resource "aws_s3_bucket_policy" "public_read_access" {
 }
 
 data "aws_iam_policy_document" "public_read_access" {
+  depends_on = [
+    aws_s3_object.index_page,
+  ]
+
   statement {
     principals {
 	  type = "*"
@@ -67,8 +66,6 @@ data "aws_iam_policy_document" "public_read_access" {
   }
 }
 
-
-
 resource "aws_s3_bucket_website_configuration" "website" {
   bucket = aws_s3_bucket.website.bucket
 
@@ -82,5 +79,5 @@ resource "aws_s3_object" "index_page" {
   bucket       = aws_s3_bucket.website.id
   key          = "index.html"
   content_type = "text/html; charset=UTF-8"
-  source       = "index.html"
+  source       = "s3_website/index.html"
 }
