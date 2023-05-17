@@ -24,3 +24,6 @@ module "website" {
   source = "./s3_website"
 }
 
+module "sns" {
+  source = "./sns"
+}
