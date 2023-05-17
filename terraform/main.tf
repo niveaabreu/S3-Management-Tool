@@ -27,3 +27,12 @@ module "website" {
 module "sns" {
   source = "./sns"
 }
+
+output "sns_arn" {
+  value = module.sns.sns_arn
+}
+
+module "cloudwatch" {
+  source = "./cloudwatch"
+  sns_arn = module.sns.sns_arn
+}
