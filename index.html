@@ -522,7 +522,7 @@
 <p>Com esta ferramenta, será  possível criar-se novos buckets no S3, gerenciar suas permissões de acesso, criação de folders, criação de políticas. Será possível também a listagem de buckets na conta do usuários, objetos em um bucket especificado, configurações de lifecycle. </p>
 <p>Por fim, pretende-se a criação de uma simples interface web que possibilite o upload de objetos no bucket, assim como listagem,  download e exclusão destes caso seja do desejo do usuário. Notificação para saber qual bucket foi modificado.</p>
 <div align="center">
-<img  style="width:500px" src="../assets/management.png"/>
+<img  style="width:500px" src="./assets/management.png"/>
 </div>
 <h2 id="pre-requisitos">Pré requisitos</h2>
 <p>Para execução adequada deste roteiro, são necessários os seguintes pré-requisitos:</p>
@@ -535,7 +535,7 @@
 <h2 id="recursos-essenciais-da-ferramenta">Recursos essenciais da ferramenta</h2>
 <p>Queremos, ao fim desse roteiro, provisionar uma arquitetura como a abaixo:</p>
 <div align="center">
-<img  style="width:500px" src="../assets/arq.png"/>
+<img  style="width:500px" src="./assets/arq.png"/>
 </div>
 
 <p>Que será capaz de criar um sistema de armazenamento de arquivos e até site estático, com funcionalidade de gerar notificações ao dono desses recursos para cada objeto adicionado nos buckets, criando assim além de grande disponibilidade e facilidade de uso, uma arquitetura altamente rastreável, permitindo a verificação mais rápido de erros e brechas de segurança.</p>
@@ -594,7 +594,7 @@ O S3 é amplamente utilizado por empresas e organizações de diferentes setores
 </span></code></pre></div>
 <p>Caso tudo dê certo você verá isso no console da AWS</p>
 <div align="center">
-<img  style="width:500px" src="../assets/bucket-nivea.png"/>
+<img  style="width:500px" src="./assets/bucket-nivea.png"/>
 </div>
 
 <h2 id="como-subir-um-site-estatico-por-terraform">Como subir um site estático por Terraform</h2>
@@ -708,12 +708,12 @@ Para isso, devemos...</p>
 </span></code></pre></div>
 <p>Caso tudo dê certo você verá isso no console da AWS</p>
 <div align="center">
-<img  style="width:500px" src="../assets/index2.png"/>
+<img  style="width:500px" src="./assets/index2.png"/>
 </div>
 
 <p>E a pagina você verá isso</p>
 <div align="center">
-<img  style="width:500px" src="../assets/index3.png"/>
+<img  style="width:500px" src="./assets/index3.png"/>
 </div>
 
 <p>Fica disponibilizado o link em que você pode verificar:</p>
@@ -907,7 +907,7 @@ Para isso, devemos...</p>
 </span></code></pre></div>
 Estando tudo correto, você deverá em seu console, além dos buckets anteriormente criados, a seguinte função:</p>
 <div align="center">
-<img  style="width:500px" src="../assets/lambda.png"/>
+<img  style="width:500px" src="./assets/lambda.png"/>
 </div>
 
 <h2 id="criando-um-topico-de-notificacoes-no-sns">Criando um tópico de notificações no SNS</h2>
@@ -1008,7 +1008,7 @@ Precisamos então, criar uma notificação que avise algum dos desenvolvedores o
 </span></code></pre></div>
 Estando tudo correto, você deverá em seu console, o tópico criado:</p>
 <div align="center">
-<img  style="width:500px" src="../assets/sns.png"/>
+<img  style="width:500px" src="./assets/sns.png"/>
 </div>
 
 <h2 id="criando-um-alarme-no-cloudwatch">Criando um alarme no Cloudwatch</h2>
@@ -1145,23 +1145,23 @@ Dessa forma sua organização de diretório deve ficar assim:</p>
 </span></code></pre></div>
 Estando tudo correto, você deverá em seu console, o alarme do Cloudwatch criado:</p>
 <div align="center">
-<img  style="width:500px" src="../assets/alarm.png"/>
+<img  style="width:500px" src="./assets/alarm.png"/>
 </div>
 
 <p>Veja em seu email cadastrado que você deve ter recebido uma notificação:</p>
 <div align="center">
-<img  style="width:500px" src="../assets/confirm.png"/>
+<img  style="width:500px" src="./assets/confirm.png"/>
 </div>
 
 <p>Para testar o funcionamento da arquitetura, adicione um objeto qualquer ao Bucket S3 recém criado. Depois de alguns minutos você deverá receber um email como o abaixo, indicando que o Alarme do CloudWatch Alarme foi acionado e um novo objeto foi adicionado no bucket.</p>
 <p>Cloudwatch notificando alarme:</p>
 <div align="center">
-<img  style="width:500px" src="../assets/cloudwatch.png"/>
+<img  style="width:500px" src="./assets/cloudwatch.png"/>
 </div>
 
 <p>Email de notificação:</p>
 <div align="center">
-<img  style="width:500px" src="../assets/notif.png"/>
+<img  style="width:500px" src="./assets/notif.png"/>
 </div>
 
 
