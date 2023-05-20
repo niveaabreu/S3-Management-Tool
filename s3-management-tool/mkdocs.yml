@@ -1,0 +1,39 @@
+site_name: S3-Management-Tool
+repo_url: https://github.com/niveaabreu/S3-Management-Tool
+repo_name: niveaabreu/S3-Management-Tool
+
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+    
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+
+nav:
+    - About: index.md
+theme:
+  font:
+    text: Ubuntu
+  name: material
+  icon:
+    repo: fontawesome/brands/github 
+  features:
+    - content.code.copy
+  plugins:
+    - search:
+        lang: en
+  palette:
+    primary: pink
+    scheme: default
