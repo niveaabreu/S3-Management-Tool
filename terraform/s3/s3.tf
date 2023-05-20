@@ -8,7 +8,7 @@ variable "function_arn" {
 
 
 resource "aws_s3_bucket" "exemplo" {
-  bucket = "bucket-nivea-456864"
+  bucket = "bucket-projeto-145"
 
   tags = {
     Name        = "My bucket"

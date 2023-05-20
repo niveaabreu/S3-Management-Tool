@@ -26,8 +26,6 @@ resource "aws_cloudwatch_metric_alarm" "lambda_log_alarm" {
   statistic           = "SampleCount"
   threshold           = "1"
   alarm_actions       = [var.sns_arn]
-  #alarm_description   = "Lambda Log Error Alarm"
-  #alarm_name          = "Lambda Log Error Alarm"
   treat_missing_data  = "missing"
 }
 

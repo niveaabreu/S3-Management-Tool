@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "website" {
-  bucket = "projetocloudnivea21"
+  bucket = "projetocloud145"
 }
 
 resource "aws_s3_bucket_ownership_controls" "example" {
