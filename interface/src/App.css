@@ -7,6 +7,14 @@
   pointer-events: none;
 }
 
+.bar{
+  width: 100%;
+  background-color: white;
+  top: 0;
+  z-index: 100;
+  background-color: rgb(2, 65, 124);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -14,14 +22,17 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  position: relative;
+  display:flex;
+  background-image: linear-gradient(rgb(255, 0, 0), rgb(244, 83, 89));
   min-height: 100vh;
-  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: space-between; */
   font-size: calc(10px + 2vmin);
   color: white;
+  height: auto;
+  margin: 0 auto;
 }
 
 .App-link {
@@ -35,4 +46,54 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.modal {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: linear-gradient(rgb(255, 130, 77), rgb(250, 2, 2));
+  padding: 20px;
+  border-radius: 40px;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  text-decoration: none; 
+}
+
+.modal-buttons button {
+  margin:10px;
+  color: rgb(0, 0, 0);
+  border: none;
+  background-image: linear-gradient(rgb(252, 102, 102), rgb(249, 60, 22));
+  border-radius: 5px;
+  font-size: 2rem;
+  outline: none; 
+  text-decoration:none;
+  transition-duration: 0.4s;
+}
+
+.modal-buttons button:hover{
+  transform: scale(1.03);
+  color:rgb(7, 88, 227);
 }

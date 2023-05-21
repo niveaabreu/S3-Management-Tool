@@ -8,7 +8,7 @@ variable "function_arn" {
 
 
 resource "aws_s3_bucket" "exemplo_fotos" {
-  bucket = "fotos-projeto-145"
+  bucket = "fotos-projeto-130"
 
   cors_rule {
     allowed_origins = ["*"]
