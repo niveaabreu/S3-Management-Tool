@@ -32,3 +32,29 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Arquivos de build
+build/
+dist/
+
+# Dependências
+node_modules/
+
+# Arquivos gerados pelo Create React App
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+
+# Arquivos de ambiente
+.env
+
+# Arquivos de build específicos do editor
+.vscode/
+.idea/
+
+# Arquivos de build específicos do sistema operacional
+.DS_Store
+Thumbs.db

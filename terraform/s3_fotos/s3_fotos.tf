@@ -7,13 +7,13 @@ variable "function_arn" {
 }
 
 
-resource "aws_s3_bucket" "exemplo" {
-  bucket = "documentos-projeto-145"
+resource "aws_s3_bucket" "exemplo_fotos" {
+  bucket = "fotos-projeto-145"
 
   cors_rule {
-  allowed_origins = ["*"]
-  allowed_methods = ["GET", "PUT", "POST", "DELETE"]
-  allowed_headers = ["*"]
+    allowed_origins = ["*"]
+    allowed_methods = ["GET", "PUT", "POST", "DELETE"]
+    allowed_headers = ["*"]
   }
 
   tags = {
@@ -23,19 +23,19 @@ resource "aws_s3_bucket" "exemplo" {
 }
 
 
-resource "aws_lambda_permission" "exemplo" {
-  statement_id  = "documentos-statement-id"
+resource "aws_lambda_permission" "exemplo_fotos" {
+  statement_id  = "fotos-statement-id"
   action        = "lambda:InvokeFunction"
   function_name =  var.function_name
  principal     = "s3.amazonaws.com"
-  source_arn    = "${aws_s3_bucket.exemplo.arn}/"
+  source_arn    = "${aws_s3_bucket.exemplo_fotos.arn}/"
 }
 
 module "s3_notification" {
   source  = "terraform-aws-modules/s3-bucket/aws//modules/notification"
   version = "~> 3.0"
 
-  bucket = aws_s3_bucket.exemplo.id
+  bucket = aws_s3_bucket.exemplo_fotos.id
   eventbridge = true
 
   lambda_notifications = {

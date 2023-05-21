@@ -20,6 +20,12 @@ module "s3" {
   function_arn = module.lambda.function_arn
 }
 
+module "fotos" {
+  source = "./s3_fotos"
+  function_name = module.lambda.function_name
+  function_arn = module.lambda.function_arn
+}
+
 module "website" {
   source = "./s3_website"
 }
