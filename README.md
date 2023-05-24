@@ -1,7 +1,7 @@
 # S3-Management-Tool
 
 <div align="center" style="max-width:68rem;">
-<center><img src="fotos/cloud.gif"  style=" width:30%;float: center; margin: 0px 0px 10px 10px"></center>
+<center><img src="fotos/cloud.gif"  style=" width:100%;float: center; margin: 0px 0px 10px 10px"></center>
 </div>
 
 ## Sobre
