@@ -1,5 +1,9 @@
 # S3-Management-Tool
 
+<div align="center" style="max-width:68rem;">
+<center><img src="fotos/cloud.gif"  style=" width:30%;float: center; margin: 0px 0px 10px 10px"></center>
+</div>
+
 ## Sobre
 
 Ferramenta de gerenciamento do S3, que permite a criação da infraestrutura abaixo, provisionando diferentes buckets para armazenamento de objetos, e notificação para o email cadastrado de novos itens adicionados nesses buckets:
