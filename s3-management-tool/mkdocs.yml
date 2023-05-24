@@ -22,7 +22,7 @@ markdown_extensions:
 
 
 nav:
-    - About: index.md
+    - Roteiro: index.md
 theme:
   font:
     text: Ubuntu
