@@ -8,6 +8,10 @@
 }
 
 .bar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   background-color: white;
   top: 0;
@@ -15,6 +19,27 @@
   background-color: rgb(2, 65, 124);
 }
 
+.log{
+  position: absolute;
+  right:0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.blocks {
+  display: flex;
+  flex-direction: row;
+}
+.block{
+  background-image: linear-gradient(rgb(244, 138, 138), rgb(193, 4, 11));
+  margin: 30px;
+  border-radius: 40px;
+  padding: 30px;
+  min-width: 30rem;
+  min-height: 10rem;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -96,4 +121,13 @@
 .modal-buttons button:hover{
   transform: scale(1.03);
   color:rgb(7, 88, 227);
+}
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+}
+
+.font{
+  font-size: 2rem;
 }

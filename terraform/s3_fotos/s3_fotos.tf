@@ -6,9 +6,13 @@ variable "function_arn" {
   type = string
 }
 
+variable "fotos_name" {
+  type = string
+  default = "ProjetoBucket132"
+}
 
 resource "aws_s3_bucket" "exemplo_fotos" {
-  bucket = "fotos-projeto-130"
+  bucket = var.fotos_name
 
   cors_rule {
     allowed_origins = ["*"]
@@ -21,7 +25,6 @@ resource "aws_s3_bucket" "exemplo_fotos" {
     Environment = "Dev"
   }
 }
-
 
 resource "aws_lambda_permission" "exemplo_fotos" {
   statement_id  = "fotos-statement-id"

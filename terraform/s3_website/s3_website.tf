@@ -1,5 +1,25 @@
+variable "function_name" {
+  type = string
+}
+
+variable "function_arn" {
+  type = string
+}
+
+variable "website_name" {
+  type = string
+  default = "ProjetoBucket131"
+}
+
 resource "aws_s3_bucket" "website" {
-  bucket = "projetocloud145"
+  bucket = var.website_name
+
+    cors_rule {
+    allowed_origins = ["*"]
+    allowed_methods = ["GET", "PUT", "POST", "DELETE"]
+    allowed_headers = ["*"]
+  }
+
 }
 
 resource "aws_s3_bucket_ownership_controls" "example" {
@@ -80,4 +100,28 @@ resource "aws_s3_object" "index_page" {
   key          = "index.html"
   content_type = "text/html; charset=UTF-8"
   source       = "s3_website/index.html"
+}
+
+resource "aws_lambda_permission" "website" {
+  statement_id  = "website-statement-id"
+  action        = "lambda:InvokeFunction"
+  function_name =  var.function_name
+ principal     = "s3.amazonaws.com"
+  source_arn    = "${aws_s3_bucket.website.arn}/"
+}
+
+module "s3_notification" {
+  source  = "terraform-aws-modules/s3-bucket/aws//modules/notification"
+  version = "~> 3.0"
+
+  bucket = aws_s3_bucket.website.id
+  eventbridge = true
+
+  lambda_notifications = {
+    lambda = {
+      function_arn  = var.function_arn
+      function_name = var.function_name
+      events        = ["s3:ObjectCreated:*"]
+    }
+  }
 }
