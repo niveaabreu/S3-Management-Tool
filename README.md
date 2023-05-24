@@ -17,7 +17,7 @@ Encontra-se também no projeto a criação de uma interface que gerencia usuári
   <img  style="width:500px" src="./fotos/interface1.png"/>
 </div>
 
-## Documentação
+## [Documentação](https://niveaabreu.github.io/S3-Management-Tool/)
 
 Você pode conferir a documentação de construção desse projeto pelo seguinte [link](https://niveaabreu.github.io/S3-Management-Tool/)
 
@@ -48,10 +48,20 @@ terraform apply -var="<email>" \
                 -auto-approve
 
 ```
-* Após a criação da infraestrutura, entre na pasta **interface**, instale as dependências e execute-a:
+* Após a criação da infraestrutura, entre na pasta **interface**, instale as dependências:
 ```bash
 cd interface
 npm install
+```
+
+* Crie um arquivo **.env** dentro da pasta **src/** de variável de ambiente para utilizar para permissões na Interface:
+ ```env
+REACT_APP_AWS_ACCESS_KEY_ID=<access_key_id>
+REACT_APP_AWS_SECRET_ACCESS_KEY=<secret_key>
+```
+
+* Execute a interface:
+```bash
 npm start
 ```
 
