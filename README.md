@@ -41,11 +41,12 @@ export AWS_SECRET_ACCESS_KEY=<CHAVE_SECRETA_DE_ACESSO>
 ```bash
 terraform init
 terraform plan
-terraform apply -var="<email>" \ 
-                -var="<nome_bucket>"   \
-                -var="<nome_bucket>"\ 
-                -var="<nome_bucket>" \
+terraform apply -var="email=<email>" \ 
+                -var="fotos_name=<fotos_name>"   \
+                -var="website_name=<website_name>"\ 
+                -var="bucket_name=<bucket_name>" \
                 -auto-approve
+
 
 ```
 * Após a criação da infraestrutura, entre na pasta **interface**, instale as dependências:
